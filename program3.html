@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program3</title>
+</head>
+<body>
+    <h1>Calculate the area of a rectangle using length and width.</h1>
+    <input type="number" id="length" placeholder="Enter length"><br>
+    <input type="number" id="width" placeholder="Enter width"><br>
+    <button onclick="calculateArea()">Calculate Area</button><br>
+    <p id="result"></p>
+    <script>
+        function calculateArea() {
+            const length = parseFloat(document.getElementById('length').value);
+            const width = parseFloat(document.getElementById('width').value);
+            if (isNaN(length) || isNaN(width)) {
+                document.getElementById('result').innerText = 'Please enter valid numbers.';
+                return;
+            }
+            const area = length * width;
+            document.getElementById('result').innerText = `Area: ${area}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program5</title>
+</head>
+<body>
+    <h1>Write a program to calculate simple interest.</h1>
+    <input type="number" id="principal" placeholder="Enter principal amount" min="0"><br>
+    <input type="number" id="rate" placeholder="Enter interest rate" min="0" max="100"><br>
+    <input type="number" id="time" placeholder="Enter time in months"><br>
+    <button onclick="calculateSimpleInterest()">Calculate Simple Interest</button><br>
+    <p id="result"></p>
+    <script>
+        function calculateSimpleInterest() {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const rate = parseFloat(document.getElementById('rate').value);
+            const time = parseFloat(document.getElementById('time').value);
+            if (isNaN(principal) || isNaN(rate) || isNaN(time)) {
+                document.getElementById('result').innerText = 'Please enter valid numbers.';
+                return;
+            }
+            const simpleInterest = (principal * rate * time) / 100;
+            document.getElementById('result').innerText = `Simple Interest: ${simpleInterest.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
